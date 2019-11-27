@@ -1,5 +1,5 @@
-<button (click)="exportarPDF()"> Esportar a PDF</button>
-<div #contenido>
+
+<div  #contenido>
 <!-- <table mat-table [dataSource]="usuarios" class="mat-elevation-z8" >
     <ng-container [matColumnDef]="column" *ngFor="let column of arrayUsuario">
         <th mat-header-cell *matHeaderCellDef> {{ column | titlecase}} </th>
@@ -10,10 +10,21 @@
     <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
 </table>
  -->
-<thead mat-header-row> 
-    <td mat-header-cell *ngFor="let item of arrayUsuario">{{ item }} </td>
+ <table>
+<thead id="titulo" > 
+    <td mat-header-cell *ngFor="let items of arrayUsuario"> {{ items |titlecase }} </td>
  </thead>
  <tbody *ngFor="let item of usuarios" app-fila [item]="item">
 
-</tbody>    
+</tbody>
+</table>
 </div>
+<br>
+<button mat-stroked-button color="primary" aria-label="PDF" (click)="exportarPDF()">
+    <mat-icon>image</mat-icon>
+    <span>Esportar a PDF</span>
+</button> <span></span>
+<button mat-stroked-button color="primary" aria-label="CSV" (click)="exportarCSV()">
+    <mat-icon>archive</mat-icon>
+    <span>Esportar a SCV</span>
+</button>

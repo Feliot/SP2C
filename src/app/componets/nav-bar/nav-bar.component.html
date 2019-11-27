@@ -9,11 +9,11 @@
     <!--   <button mat-icon-button [routerLink]="['home']"><span>Menu</span> </button> -->
       <button mat-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
           <mat-icon>more_vert</mat-icon>
-          <span id="nameUser" *ngIf="isLogin"> {{ myUsuario.email.substring(0, 8) }}..</span> <!-- limitado a 10 caracteres para celular -->
+          <span id="nameUser" *ngIf="isLogin"> {{ myConcesionaria.razonsocial.substring(0, 8) | uppercase  }}..</span> <!-- limitado a 10 caracteres para celular -->
         </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item [routerLink]="['home']" style="color:blue" *ngIf="isLogin">
-              <span>     {{ myUsuario.email }}</span>
+          <button mat-menu-item [routerLink]="['home']" style="color:blue" *ngIf="isLogin" id="NombreMenu">
+              <span>    Usuario: {{ myConcesionaria.razonsocial | titlecase }}</span>
           </button>
           <button mat-menu-item [routerLink]="['home']" *ngIf="isLogin">
             <mat-icon>home</mat-icon>

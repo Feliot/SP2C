@@ -13,7 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavBarComponent } from './componets/nav-bar/nav-bar.component';
 import { FormDatosComponent } from './componets/form-datos/form-datos.component';
 import { FilaComponent } from './componets/fila/fila.component';
-import { UtilmoduleModule } from './utils/utilmodule.module'
+import { UtilmoduleModule } from './utils/utilmodule.module';
+import { FilterPipe } from './pipes/filter.pipe'
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { UtilmoduleModule } from './utils/utilmodule.module'
     routingComponents,
     FormDatosComponent,
     FilaComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

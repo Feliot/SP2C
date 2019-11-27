@@ -7,12 +7,15 @@ import { BehaviorSubject, Observer, Observable} from 'rxjs';
 import { Usuario, miUsuario } from '../models/usuario';
 import { promise } from 'protractor';
 import { auth } from 'firebase/app';
+import { Concesionaria } from '../models/concesionaria';
 @Injectable({
   providedIn: 'root'
 })
 export class UserServiceService {
+  
   private miObservable = new BehaviorSubject<string>('');
   miObservable$ = this.miObservable.asObservable();
+  usuariosCollection : AngularFirestoreCollection<Concesionaria>;
   private user: Usuario;
   private userAux: Usuario;
 
@@ -44,7 +47,7 @@ return new Promise((resolve, reject) => {
   });
 }
 
-reCargarusuario() {
+reCargarUsuario() {
   this.getAuth()
   .subscribe(user => {
     this.user.email = user.email;
@@ -135,7 +138,7 @@ user.updatePassword(newPassword).then(function() {
 ActualizarPerfil(){
   var user = this.afAuth.auth.currentUser;
 user.updateProfile({
-  displayName: "Jane Q. User",
+  displayName: "nombre Usuario",
   photoURL: "https://example.com/jane-q-user/profile.jpg"
 }).then(function() {
   // Update successful.
@@ -148,6 +151,7 @@ user.updateProfile({
  /*  return this.afAuth.authState; */
    return this.afAuth.authState.pipe(map(auth => auth));
  }
+ 
  darPromesaAuth(){
     new Promise (user=> this.afAuth.auth.currentUser)
     .then(function(user) {
@@ -165,7 +169,6 @@ user.updateProfile({
  }
 
  isAutenticated() {
-
 var usuarioActual = this.afAuth.auth.currentUser.email;
 if (!usuarioActual) {
   /* if (!this.user) {  */

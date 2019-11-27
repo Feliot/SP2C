@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterContentInit } from '@angular/core';
+import { Concesionaria } from 'src/app/models/concesionaria';
 
 @Component({
   selector: '[app-fila]',
@@ -7,9 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FilaComponent implements OnInit {
   @Input() item;
+
   constructor() { }
 
   ngOnInit() {
+/*     console.log(this.item); */
   }
 
 }

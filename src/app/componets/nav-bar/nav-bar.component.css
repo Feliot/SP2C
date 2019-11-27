@@ -40,8 +40,15 @@
 /*   padding: 0 8px;
   overflow: auto; 
   border: 1px solid #ccc; */
-
 }
+#NombreMenu{
+ /*  font-variant: small-caps; */
+  font-weight: bold;
+  font-size: 16px;
+  align-content: center;
+  /* text-align: center; */
+}
+
 .titulo{
   font-size: auto;
   width: auto;

@@ -1,12 +1,12 @@
 
-export interface concesionaria {
-  email?: string;
+export interface Concesionaria {
+    email?: string;
     razonsocial?: string;
     telefono?: string;
     localidad?: string;
     clave?: string;
 }
-export class miConcesionaria implements concesionaria {
+export class miConcesionaria implements Concesionaria {
     constructor(public email?:string,public razonsocial?: string, public telefono?: string,
         public localidad?: string, public clave?: string){
     }

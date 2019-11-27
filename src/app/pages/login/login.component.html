@@ -5,16 +5,23 @@
   </mat-form-field> 
  <br>-->
   <H2>Login</H2>
- 
 
    <mat-form-field>
           <input matInput placeholder="email"   [(ngModel)]="email" required name="email">
   </mat-form-field>
   <br>
+  <button mat-raised-button color="primary" (click)="cargarGlobal()" >
+    <span>Global</span><mat-icon>global</mat-icon></button>
+  <button mat-raised-button color="primary" (click)="cargarPublico()" >
+      <span>público</span><mat-icon>global</mat-icon></button>
+  <button mat-raised-button color="primary" (click)="cargarGlobal()" >
+        <span>nada</span><mat-icon>global</mat-icon></button>
+        <br>
+        <br>
    <mat-form-field>
               <input matInput placeholder="password"  type="password" [(ngModel)]="password" required name="password">
   </mat-form-field>
-<!--   <app-captcha (resolved)="resolved($event)" (bactivate)="activar($event)"></app-captcha>
+  <app-captcha (resolved)="resolved($event)" (bactivate)="activar($event)"></app-captcha>
      <br>
      <div *ngIf="bactivate; else elseBlock">
       <button mat-raised-button color="primary" (click)="onSubmitLogin()" >
@@ -23,10 +30,10 @@
      <ng-template #elseBlock>
       <button mat-raised-button color="Disabled">
           <span>Loguear  </span><mat-icon>email</mat-icon></button>
-     </ng-template> -->
+     </ng-template>
      <br>
-     <button mat-raised-button color="primary" (click)="onSubmitLogin()" >
-        <span>Loguear  </span><mat-icon>email</mat-icon></button>
+   <!--   <button mat-raised-button color="primary" (click)="onSubmitLogin()" >
+        <span>Loguear  </span><mat-icon>email</mat-icon></button> -->
 
   <br>
   <span class="errormje">{{ msjerror }}</span>

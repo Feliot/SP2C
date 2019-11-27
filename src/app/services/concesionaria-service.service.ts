@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { Usuario } from '../models/usuario'
+import { Concesionaria } from '../models/concesionaria'
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -8,20 +8,20 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ConcesionariaServiceService {
-  usuariosCollection : AngularFirestoreCollection<Usuario>;
-  usuarios: Observable<Usuario[]>;
-  usuarioDoc: AngularFirestoreDocument<Usuario>;
-  user: Usuario = {};
-  usuariosAux: Usuario[];
+  usuariosCollection : AngularFirestoreCollection<Concesionaria>;
+  usuarios: Observable<Concesionaria[]>;
+  usuarioDoc: AngularFirestoreDocument<Concesionaria>;
+  user: Concesionaria = {};
+  listadoDeUsuarios: Concesionaria[];
   constructor(public db: AngularFirestore) {
     /* this.usuarios = this.db.collection('usuarios').valueChanges(); */
-    this.usuariosCollection = this.db.collection('usuarios');
+    this.usuariosCollection = this.db.collection('concesionarias');
 
     this.usuarios = this.usuariosCollection.snapshotChanges().pipe(
       map(actions=> actions.map(a =>{
-        const data= a.payload.doc.data() as Usuario;
-        const id = a.payload.doc.id;
-        return {id, ...data};
+        const data= a.payload.doc.data() as Concesionaria;
+        /* const id = a.payload.doc.id; */
+        return { ...data};
       })
     ),);
   }
@@ -31,7 +31,7 @@ export class ConcesionariaServiceService {
       /* return this.usuarios = this.usuarios */
         return this.usuarios = this.usuariosCollection.snapshotChanges().pipe(map(actions=>{
           return actions.map(a =>{
-            const data= a.payload.doc.data() as Usuario;
+            const data= a.payload.doc.data() as Concesionaria;
             /* data.id = a.payload.doc.id; */
             return data;
           })
@@ -40,12 +40,13 @@ export class ConcesionariaServiceService {
     GetUsersFiltro(  filtro: string,  campo:string){
       console.log(filtro, campo);
       //sacado de https://github.com/angular/angularfire/blob/master/docs/firestore/querying-collections.md
-      this.usuarios = this.db.collection('usuarios', ref => ref.where(campo, '==', filtro))
+      return  this.usuarios = this.db.collection('concesionarias', ref => ref.where(campo, '==', filtro))
       .snapshotChanges().pipe(map(actions=>{
         return actions.map(a =>{
-          const data= a.payload.doc.data() as Usuario;
+          const data= a.payload.doc.data() as Concesionaria;
    /*        data.id = a.payload.doc.id;
           console.log(data.id); */
+          console.log( a.payload.doc.id);
           return data;
         })
       }),)
@@ -58,13 +59,21 @@ export class ConcesionariaServiceService {
 
     getUsuariosSC(){
       return new Promise((resolve, reject) => {
-        resolve(this.usuarios.subscribe( usuario=>{this.usuariosAux = usuario
-        console.log(usuario, this.usuariosAux );
-        } ))
+        resolve(this.usuarios.subscribe(usuario=>
+          {this.listadoDeUsuarios.push(usuario as Concesionaria) ;
+        }))
         , err=> reject(err)})
       }
-    getAuxUsers(){
-      return this.usuariosAux;
+  setUser(us :Concesionaria){
+        this.user= us;
+        console.log(this.user);
+      }
+
+    getUser(){
+        return this.user;
+      }  
+    getListUsers(){
+      return this.listadoDeUsuarios;
     }
 /*
     deleteUsuario(usuario: Usuario){
@@ -74,7 +83,7 @@ export class ConcesionariaServiceService {
       this.usuarioDoc.delete();
       }
     } */
-    addUsuario(usuario: Usuario){
+    addUsuario(usuario: Concesionaria){
        /*  this.usuariosCollection.add(usuario); */
         const param = JSON.parse(JSON.stringify(usuario));
         console.log(param);

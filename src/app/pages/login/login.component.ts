@@ -44,6 +44,14 @@ onSubmitLoginPublic(){
   this.password= '123456';
   this.onSubmitLogin();
 }
+cargarGlobal(){
+  this.email= 'global@global.com';
+  this.password= '123456';
+}
+cargarPublico(){
+  this.email= 'publico@publico.com';
+  this.password= '123456';
+}
   onSubmitLogin(){
 /*     this.miAuth.login(this.email, this.password)
     .then((res) =>{

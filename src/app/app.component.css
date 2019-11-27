@@ -12,6 +12,7 @@
     margin: auto;
     overflow: auto;
     width: auto;
+    min-height: 600px;
     height: auto;
     /* border: 1px solid #ccc; */
     box-shadow: 0 0 20px 1px royalblue;
