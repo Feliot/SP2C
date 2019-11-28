@@ -14,7 +14,9 @@ import { NavBarComponent } from './componets/nav-bar/nav-bar.component';
 import { FormDatosComponent } from './componets/form-datos/form-datos.component';
 import { FilaComponent } from './componets/fila/fila.component';
 import { UtilmoduleModule } from './utils/utilmodule.module';
-import { FilterPipe } from './pipes/filter.pipe'
+import { FilterPipe } from './pipes/filter.pipe';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
+
 
 
 @NgModule({
@@ -37,7 +39,8 @@ import { FilterPipe } from './pipes/filter.pipe'
      ReactiveFormsModule,
      AngularFireAuthModule,
      AngularFireStorageModule,
-     UtilmoduleModule
+     UtilmoduleModule,
+     NgxQRCodeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

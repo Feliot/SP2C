@@ -12,10 +12,21 @@ export class miConcesionaria implements Concesionaria {
     }
 }
 
-export interface vehiculo{
-  marca?: string;
+export interface Vehiculo{
+    marca?: string;
     modelo?: string;
     año?: string;
     kilometro?: string;
     tipo?: string;
+    foto?: string;
+    concesionaria?: string;
+}
+export class miVehiculo implements Vehiculo {
+    constructor(public marca?:string, publicmodelo?: string,
+        public año?: string,
+        public kilometro?: string,
+        public tipo?: string,
+        public foto?: string,
+        public concesionaria?: string ){
+    }
 }

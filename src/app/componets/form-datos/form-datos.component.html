@@ -1,5 +1,4 @@
-
-<div  #contenido>
+<div #contenido >  
 <!-- <table mat-table [dataSource]="usuarios" class="mat-elevation-z8" >
     <ng-container [matColumnDef]="column" *ngFor="let column of arrayUsuario">
         <th mat-header-cell *matHeaderCellDef> {{ column | titlecase}} </th>
@@ -14,17 +13,23 @@
 <thead id="titulo" > 
     <td mat-header-cell *ngFor="let items of arrayUsuario"> {{ items |titlecase }} </td>
  </thead>
- <tbody *ngFor="let item of usuarios" app-fila [item]="item">
+ <tbody *ngFor="let item of usuarios" app-fila [item]="item" (Cargar)="openDialog($event)">
 
 </tbody>
 </table>
-</div>
+</div> <!-- //contenido -->
 <br>
-<button mat-stroked-button color="primary" aria-label="PDF" (click)="exportarPDF()">
+
+<ngx-qrcode id="qrCodeImagen" [qrc-element-type]="elementType" [qrc-value]="text_qr"></ngx-qrcode>
+<div class="example-button-row">
+<button mat-raised-button color="primary" aria-label="PDF" (click)="exportarPDF()">
     <mat-icon>image</mat-icon>
     <span>Esportar a PDF</span>
 </button> <span></span>
-<button mat-stroked-button color="primary" aria-label="CSV" (click)="exportarCSV()">
+<button mat-raised-button color="primary" aria-label="CSV" (click)="exportarCSV()">
     <mat-icon>archive</mat-icon>
     <span>Esportar a SCV</span>
 </button>
+</div>
+
+

@@ -27,13 +27,13 @@
             <mat-icon>logout</mat-icon>
             <span>Desloguearse</span>
           </button>
-          <button mat-menu-item [routerLink]="['alta-usuario']" *ngIf="isLogin">
+          <button mat-menu-item [routerLink]="['grilla']" *ngIf="isLogin">
             <mat-icon>details</mat-icon>
-            <span>Administrador</span>
+            <span>Grilla</span>
           </button>
-          <button mat-menu-item [routerLink]="['usuarios']" *ngIf="isLogin">
+          <button mat-menu-item [routerLink]="['alta']" *ngIf="isLogin">
             <mat-icon>person_add_disabled</mat-icon>
-            <span>Usuarios</span>
+            <span>Altas</span>
           </button>
 <!--         <button mat-menu-item [matMenuTriggerFor]="juegos" [routerLink]="['juegos']" *ngIf="isLogin">Juegos</button>
         <mat-menu #juegos="matMenu" xPosition="before">

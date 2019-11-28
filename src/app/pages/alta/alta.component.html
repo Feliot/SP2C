@@ -1,0 +1,41 @@
+
+<mat-card class="example-card">
+        <form class="example-form">
+                <H2>Alta de Vehiculos   </H2>
+        <br> 
+           <!--  <input  placeholder="email" type="text" id="email1"  [(ngModel)]="email" name="email" required> -->
+         <!--    <input  placeholder="password" type="password" [(ngModel)]="password" name="password" required> -->
+         <mat-form-field>
+                <input matInput placeholder="marca"   [(ngModel)]="vehiculo.marca" required name="marca">
+        </mat-form-field> 
+        <br>   
+        <mat-form-field>
+                <input matInput placeholder="modelo"   [(ngModel)]="vehiculo.modelo" required name="modelo">
+        </mat-form-field> 
+        <br>   
+        <mat-form-field>
+                <input matInput placeholder="año" maxlength='4'  [(ngModel)]="vehiculo.ano" required type="number"  name="ano">
+        </mat-form-field> 
+        <br>   
+        <mat-form-field>
+                <input matInput placeholder="kilometros"   [(ngModel)]="vehiculo.kilometros" required type="number" name="kilometros">
+        </mat-form-field> 
+        <br>   
+        <mat-form-field>
+        <mat-select placeholder="tipo" [(ngModel)]="vehiculo.tipo" name="tipo">
+                <mat-option [value]="tipo" *ngFor="let tipo of tipos">{{tipo}}</mat-option>
+        </mat-select>
+        </mat-form-field>
+        <br> 
+            <input type="file"  id="avatar" name="avatar"
+            accept="image/png, image/jpeg" (change)="onUpload($event)"> 
+<br>  
+    <br>
+        <button mat-raised-button color="primary" (click)="onSubmitAlta()">
+            <span>Dar Alta  </span><mat-icon>user</mat-icon></button>
+<br>
+        <span class="errormje">{{ msjerror }}</span> 
+         <br>
+       
+        </form>
+</mat-card>

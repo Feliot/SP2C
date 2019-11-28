@@ -5,11 +5,19 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { AltaComponent } from './pages/alta/alta.component';
+import { GrillaComponent } from './pages/grilla/grilla.component';
+
 
 
 const routes: Routes = [ {path: 'home', component: HomeComponent,
-canActivate:[ AuthGuard]},
+canActivate:[ AuthGuard] /* ,
+children:[
+  {path: 'qr', component: 'asd'}
+] */},
 {path: 'login', component: LoginComponent},
+{path: 'alta', component: AltaComponent, canActivate:[ AuthGuard]},
+{path: 'grilla', component: GrillaComponent, canActivate:[ AuthGuard]},
 {path: '', redirectTo : 'home' , pathMatch: 'full'},
 {path: '**', component :  ErrorComponent, pathMatch: 'full'}
 ];
@@ -21,4 +29,4 @@ canActivate:[ AuthGuard]},
 export class AppRoutingModule { }
 export const routingComponents = [HomeComponent
   , ErrorComponent,
-    LoginComponent, RegisterComponent]
+    LoginComponent, RegisterComponent, AltaComponent]

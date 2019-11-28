@@ -4,6 +4,9 @@ import{ Concesionaria, miConcesionaria } from '../../models/concesionaria'
 import { Component, Input} from '@angular/core';
 import * as jsPDF from 'jspdf';
 import * as XLSX from 'xlsx';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { QrcodeComponent } from 'src/app/utils/mi-qrcode/qrcode/qrcode.component';
+
 
 
 @Component({
@@ -20,10 +23,10 @@ export class FormDatosComponent implements AfterContentInit {
 /*   private posisionUid = this.arrayUsuario.indexOf('uid');
   columnsToDisplay: string[] = this.arrayUsuario.slice(0, this.posisionUid); */
  public arrayUsuario;
-  constructor() {
-
+  constructor(public dialog: MatDialog) {
    }
-  @Input() usuarios;
+   @Input() usuarios;
+private text_qr: string ;
   ngAfterContentInit(){
     /* this.contenidoRef.nativeElement.focus(); */
     console.log(this.usuarios);
@@ -32,12 +35,17 @@ export class FormDatosComponent implements AfterContentInit {
     this.arrayUsuario = Object.keys(this.usuario);
    
   }
-/*   ngOnInit() {
-    console.log("formdata: ", this.usuarios);
-  } */
-  /**
-   * exportarPDF
-   */
+  openDialog(e) {
+/*     const dialogRef = this.dialog.open(QrcodeComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    }); */
+
+    this.text_qr= e;
+/*     console.log(this.text_qr); */
+  }
+
+   // exportarPDF
   public exportarPDF() {
     let doc = new jsPDF({
       orientation: 'landscape',
@@ -68,6 +76,10 @@ XLSX.utils.book_append_sheet(wb, ws, 'test')
 XLSX.writeFile(wb, 'Concesionarias.csv')
 
   }
-  
+    
 }
-
+/* @Component({
+  selector: 'dialog-content-example-dialog',
+  templateUrl: 'dialog-content-example-dialog.html',
+})
+export class DialogContentExampleDialog {} */

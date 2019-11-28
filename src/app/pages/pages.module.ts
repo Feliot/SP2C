@@ -5,13 +5,16 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../../environments/environment';
+import { AltaComponent } from './alta/alta.component';
+import { GrillaComponent } from './grilla/grilla.component';
+
 /* import { UsuariosService } from '../services/usuarios.service'; */
 /* import { MaterialModule } from '../material'; */
 /* import { HomeComponent } from './home/home.component'; */
 
 
 @NgModule({
-  declarations: [ ],
+  declarations: [ GrillaComponent],
   imports: [
     CommonModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
