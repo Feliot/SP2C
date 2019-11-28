@@ -60,7 +60,7 @@ resolve(this.getAuth()
 .subscribe(user => {
 /*   this.user.id = user.uid; */
   this.user.email = user.email;
-  console.log(this.user);
+/*   console.log(this.user); */
 })), err => reject(err)
   })
 }
@@ -121,7 +121,7 @@ register(email: string , password: string) {
   cargarUsuario(  email: string) {
     this.user = new miUsuario();
     this.user.email = email;
-    console.log('cargando usuario', email);
+ /*    console.log('cargando usuario', email); */
 
   }
 

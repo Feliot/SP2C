@@ -31,7 +31,7 @@ export class AuthGuard implements CanActivate {
         else{
        /*    this.usuarioService.reCargarusuario(); */
           /* console.log('usuario',this.usuarioService.getUser()); */
-          this.usuarioService.recargarYDevolverUsuario().then( e => console.log(e)
+          this.usuarioService.recargarYDevolverUsuario().then( /* e => console.log(e) */
            /*  this.usersS.GetUsersFiltro(this.usuarioService.getUser().email, 'email')
             .subscribe(r=>
              this.usersS.setUser(r[0]) 

@@ -38,7 +38,7 @@ export class ConcesionariaServiceService {
         }),)
     }
     GetUsersFiltro(  filtro: string,  campo:string){
-      console.log(filtro, campo);
+    /*   console.log(filtro, campo); */
       //sacado de https://github.com/angular/angularfire/blob/master/docs/firestore/querying-collections.md
       return  this.usuarios = this.db.collection('concesionarias', ref => ref.where(campo, '==', filtro))
       .snapshotChanges().pipe(map(actions=>{
@@ -66,7 +66,7 @@ export class ConcesionariaServiceService {
       }
   setUser(us :Concesionaria){
         this.user= us;
-        console.log(this.user);
+/*         console.log(this.user); */
       }
 
     getUser(){

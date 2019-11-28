@@ -1,6 +1,6 @@
 import { Output, ElementRef, ViewChild, AfterContentInit, OnInit} from '@angular/core';
 import{ Usuario, miUsuario } from '../../models/usuario'
-import{ Concesionaria, miConcesionaria } from '../../models/concesionaria'
+import{ Concesionaria, miVehiculo } from '../../models/concesionaria'
 import { Component, Input} from '@angular/core';
 import * as jsPDF from 'jspdf';
 import * as XLSX from 'xlsx';
@@ -19,7 +19,7 @@ export class FormDatosComponent implements AfterContentInit {
 
 @ViewChild('contenido', {static: false}) contenidoRef: ElementRef;
 
-  public usuario = new miConcesionaria('','');
+  public usuario = new miVehiculo('','');
 /*   private posisionUid = this.arrayUsuario.indexOf('uid');
   columnsToDisplay: string[] = this.arrayUsuario.slice(0, this.posisionUid); */
  public arrayUsuario;
@@ -29,7 +29,7 @@ export class FormDatosComponent implements AfterContentInit {
 private text_qr: string ;
   ngAfterContentInit(){
     /* this.contenidoRef.nativeElement.focus(); */
-    console.log(this.usuarios);
+ /*    console.log(this.usuarios); */
     //Si es un objeto
 /*     Object.keys(this.usuarios); */
     this.arrayUsuario = Object.keys(this.usuario);

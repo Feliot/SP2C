@@ -11,7 +11,7 @@
  -->
  <table>
 <thead id="titulo" > 
-    <td mat-header-cell *ngFor="let items of arrayUsuario"> {{ items |titlecase }} </td>
+    <td mat-header-cell *ngFor="let items of arrayUsuario"> {{ items | titlecase }} </td>
  </thead>
  <tbody *ngFor="let item of usuarios" app-fila [item]="item" (Cargar)="openDialog($event)">
 

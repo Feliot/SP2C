@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserServiceService } from 'src/app/services/user-service.service';
 import { Usuario, miUsuario } from 'src/app/models/usuario';
-import { Concesionaria, miConcesionaria } from 'src/app/models/concesionaria';
-import { ConcesionariaServiceService } from 'src/app/services/concesionaria-service.service';
+import { Vehiculo, miConcesionaria } from 'src/app/models/concesionaria';
+import { VehiculoServiceService } from 'src/app/services/vehiculo-service.service';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +12,7 @@ import { ConcesionariaServiceService } from 'src/app/services/concesionaria-serv
 export class HomeComponent implements OnInit {
   private Listado=[];
   
-  constructor( private concesionS:ConcesionariaServiceService) {
+  constructor( private concesionS:VehiculoServiceService) {
     
     /* this.Listado.push(new miConcesionaria('','','')); */
    }
@@ -33,6 +33,6 @@ export class HomeComponent implements OnInit {
 
  
 getUsuarios(){
-return this.Listado as Concesionaria[];
+return this.Listado as Vehiculo[];
 }
 }

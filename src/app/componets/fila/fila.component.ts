@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, AfterContentInit ,Output ,EventEmitter} from '@angular/core';
-import { Concesionaria } from 'src/app/models/concesionaria';
+
 
 @Component({
   selector: '[app-fila]',
@@ -14,7 +14,9 @@ export class FilaComponent implements OnInit {
 
   manejadora(a) {
     // let persona = new Persona (this.name, this.surname);
-    this.Cargar.emit(a);
+    let aa = JSON.stringify(a);
+    /* console.log(aa) */
+    this.Cargar.emit(aa);
     }
 
   constructor() { }

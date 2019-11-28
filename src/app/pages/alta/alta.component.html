@@ -14,7 +14,7 @@
         </mat-form-field> 
         <br>   
         <mat-form-field>
-                <input matInput placeholder="año" maxlength='4'  [(ngModel)]="vehiculo.ano" required type="number"  name="ano">
+                <input matInput placeholder="año" maxlength='4'  [(ngModel)]="vehiculo.year" required type="number"  name="year">
         </mat-form-field> 
         <br>   
         <mat-form-field>
@@ -32,7 +32,7 @@
 <br>  
     <br>
         <button mat-raised-button color="primary" (click)="onSubmitAlta()">
-            <span>Dar Alta  </span><mat-icon>user</mat-icon></button>
+            <span>Alta de Vehiculo</span><mat-icon>person</mat-icon></button>
 <br>
         <span class="errormje">{{ msjerror }}</span> 
          <br>

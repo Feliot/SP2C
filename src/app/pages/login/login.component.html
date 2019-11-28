@@ -10,17 +10,22 @@
           <input matInput placeholder="email"   [(ngModel)]="email" required name="email">
   </mat-form-field>
   <br>
-  <button mat-raised-button color="primary" (click)="cargarGlobal()" >
-    <span>Global</span><mat-icon>global</mat-icon></button>
-  <button mat-raised-button color="primary" (click)="cargarPublico()" >
-      <span>público</span><mat-icon>global</mat-icon></button>
-  <button mat-raised-button color="primary" (click)="cargarGlobal()" >
-        <span>nada</span><mat-icon>global</mat-icon></button>
-        <br>
-        <br>
+
    <mat-form-field>
               <input matInput placeholder="password"  type="password" [(ngModel)]="password" required name="password">
   </mat-form-field>
+  <br>
+  <br>
+ 
+  <button mat-raised-button color="primary" (click)="cargarGlobal()" >
+    <span>Global</span><mat-icon>person</mat-icon></button>
+  <button mat-raised-button color="primary" (click)="cargarAdmin()" >
+      <span>Admin</span><mat-icon>person</mat-icon></button>
+  <button mat-raised-button color="primary" (click)="cargarPepito()" >
+        <span>Pepito</span><mat-icon>person</mat-icon></button>
+
+        <br>
+        <br>  
   <app-captcha (resolved)="resolved($event)" (bactivate)="activar($event)"></app-captcha>
      <br>
      <div *ngIf="bactivate; else elseBlock">
@@ -38,7 +43,7 @@
   <br>
   <span class="errormje">{{ msjerror }}</span>
    <br>
-  <button mat-raised-button color="warn" (click)="onSubmitLoginPublic()"><span>Ingreso Público </span><mat-icon>public</mat-icon></button>
+ <!--  <button mat-raised-button color="warn" (click)="onSubmitLoginPublic()"><span>Ingreso Público </span><mat-icon>public</mat-icon></button> -->
   <br>
   <br>
   <span><a   [routerLink]="['../register']">

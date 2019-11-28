@@ -13,7 +13,7 @@ export class CaptchaComponent implements OnInit {
   constructor() { }
   public resolved(captchaResponse: string) {
     this.bactivate.emit(true);
-    console.log(`Resolved captcha with response ${captchaResponse}:`);
+ /*    console.log(`Resolved captcha with response ${captchaResponse}:`); */
   }
   ngOnInit() {
 

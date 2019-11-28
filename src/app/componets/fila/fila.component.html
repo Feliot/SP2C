@@ -1,12 +1,13 @@
 
-<td > {{item.email}} </td>
-<td > {{item.razonsocial}} </td>
-<td > {{item.telefono}} </td>
-<td > {{item.localidad}} </td>
-<td > 
-    <button mat-stroked-button color="accent" id="{{item.email}}" (click)="manejadora(item.email)">
+<td > {{item.marca}} </td>
+<td > {{item.modelo}} </td>
+<td > {{item.year}} </td>
+<td > {{item.kilometros}} </td>
+<td > {{item.tipo}} </td>
+<td > {{item.foto}} </td>
+<td > {{item.concesionaria}} </td>
+
+    <button mat-stroked-button color="accent" id="{{item.concesionaria}}" (click)="manejadora(item)">
             <mat-icon>update</mat-icon>
             <span>QR</span>
         </button>
-
-</td>

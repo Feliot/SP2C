@@ -15,16 +15,16 @@ export class miConcesionaria implements Concesionaria {
 export interface Vehiculo{
     marca?: string;
     modelo?: string;
-    año?: string;
-    kilometro?: string;
+    year?: string;
+    kilometros?: string;
     tipo?: string;
     foto?: string;
     concesionaria?: string;
 }
 export class miVehiculo implements Vehiculo {
-    constructor(public marca?:string, publicmodelo?: string,
-        public año?: string,
-        public kilometro?: string,
+    constructor(public marca?:string, public modelo?: string,
+        public year?: string,
+        public kilometros?: string,
         public tipo?: string,
         public foto?: string,
         public concesionaria?: string ){

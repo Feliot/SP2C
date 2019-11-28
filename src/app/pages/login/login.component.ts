@@ -48,8 +48,12 @@ cargarGlobal(){
   this.email= 'global@global.com';
   this.password= '123456';
 }
-cargarPublico(){
-  this.email= 'publico@publico.com';
+cargarPepito(){
+  this.email= 'pepito@pepito.com';
+  this.password= '123456';
+}
+cargarAdmin(){
+  this.email= 'admin@admin.com';
   this.password= '123456';
 }
   onSubmitLogin(){

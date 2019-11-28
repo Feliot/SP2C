@@ -26,7 +26,7 @@ export class NavBarComponent implements OnInit {
       if(user){
       /*   this.miAuth.generarToken(); */
         this.isLogin = true;
-        console.log("isLogin = true", user.email);
+     /*    console.log("isLogin = true", user.email); */
       /*   this.myUsuario  =new miUsuario(user.uid, user.email); */
         this.myUsuario  = new miUsuario(user.email);
         this.myConcesionaria  = new miConcesionaria(user.email,'');
