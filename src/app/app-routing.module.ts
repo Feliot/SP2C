@@ -10,6 +10,7 @@ import { GrillaComponent } from './pages/grilla/grilla.component';
 
 
 
+
 const routes: Routes = [ {path: 'home', component: HomeComponent,
 canActivate:[ AuthGuard] /* ,
 children:[
@@ -29,4 +30,4 @@ children:[
 export class AppRoutingModule { }
 export const routingComponents = [HomeComponent
   , ErrorComponent,
-    LoginComponent, RegisterComponent, AltaComponent]
+    LoginComponent, RegisterComponent, AltaComponent, GrillaComponent]

@@ -18,7 +18,7 @@ import { QrcodeComponent } from 'src/app/utils/mi-qrcode/qrcode/qrcode.component
 export class FormDatosComponent implements AfterContentInit {
 
 @ViewChild('contenido', {static: false}) contenidoRef: ElementRef;
-
+public Buscar="";
   public usuario = new miVehiculo('','');
 /*   private posisionUid = this.arrayUsuario.indexOf('uid');
   columnsToDisplay: string[] = this.arrayUsuario.slice(0, this.posisionUid); */

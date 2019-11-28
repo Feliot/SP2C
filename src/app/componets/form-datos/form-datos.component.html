@@ -8,12 +8,17 @@
       <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
     <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
 </table>
+
  -->
+ <mat-form-field>
+        <input matInput placeholder="Buscar por Tipo"  [(ngModel)]="Buscar" required name="Buscar" >
+    </mat-form-field>
  <table>
+
 <thead id="titulo" > 
     <td mat-header-cell *ngFor="let items of arrayUsuario"> {{ items | titlecase }} </td>
  </thead>
- <tbody *ngFor="let item of usuarios" app-fila [item]="item" (Cargar)="openDialog($event)">
+ <tbody *ngFor="let item of usuarios | filter:Buscar" app-fila [item]="item" (Cargar)="openDialog($event)">
 
 </tbody>
 </table>

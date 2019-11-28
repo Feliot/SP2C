@@ -38,8 +38,9 @@ export class VehiculoServiceService {
     }
     GetUsersFiltro(  filtro: string,  campo:string){
       console.log(filtro, campo);
+      if(!filtro){filtro = "";}
       //sacado de https://github.com/angular/angularfire/blob/master/docs/firestore/querying-collections.md
-      return  this.usuarios = this.db.collection('Vehiculos', ref => ref.where(campo, '==', filtro))
+      return  this.usuarios = this.db.collection('vehiculos', ref => ref.where(campo, '==', filtro))
       .snapshotChanges().pipe(map(actions=>{
         return actions.map(a =>{
           const data= a.payload.doc.data() as Vehiculo;
