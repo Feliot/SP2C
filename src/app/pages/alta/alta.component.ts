@@ -18,7 +18,7 @@ import { reject } from 'q';
 })
 export class AltaComponent implements OnInit {
   public  tipos= ['auto', 'camioneta', 'camion'];
- private vehiculo= new miVehiculo();
+ public  vehiculo= new miVehiculo();
   constructor(private storage: AngularFireStorage,
     private miVehiculoServ: VehiculoServiceService, private authRout: Router,
    private uss: ConcesionariaServiceService

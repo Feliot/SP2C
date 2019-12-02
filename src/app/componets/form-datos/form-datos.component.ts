@@ -16,17 +16,19 @@ import { QrcodeComponent } from 'src/app/utils/mi-qrcode/qrcode/qrcode.component
 })
 
 export class FormDatosComponent implements AfterContentInit {
-
+  public qrCodeImagen="";
 @ViewChild('contenido', {static: false}) contenidoRef: ElementRef;
 public Buscar="";
   public usuario = new miVehiculo('','');
 /*   private posisionUid = this.arrayUsuario.indexOf('uid');
   columnsToDisplay: string[] = this.arrayUsuario.slice(0, this.posisionUid); */
  public arrayUsuario;
+ public  text_qr: string ;
+ public elementType: string;
   constructor(public dialog: MatDialog) {
    }
    @Input() usuarios;
-private text_qr: string ;
+
   ngAfterContentInit(){
     /* this.contenidoRef.nativeElement.focus(); */
  /*    console.log(this.usuarios); */
@@ -36,10 +38,10 @@ private text_qr: string ;
    
   }
   openDialog(e) {
-/*     const dialogRef = this.dialog.open(QrcodeComponent);
+    const dialogRef = this.dialog.open(QrcodeComponent);
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
-    }); */
+    });
 
     this.text_qr= e;
 /*     console.log(this.text_qr); */

@@ -5,7 +5,7 @@ import { MiCodemoduleModule } from './mi-qrcode/mi-qrcodemodule.module';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [ ],
   exports: [MiCaptchamoduleModule,
     MiCodemoduleModule],
   imports: [

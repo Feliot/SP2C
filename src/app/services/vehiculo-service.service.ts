@@ -46,7 +46,7 @@ export class VehiculoServiceService {
           const data= a.payload.doc.data() as Vehiculo;
    /*        data.id = a.payload.doc.id;
           console.log(data.id); */
-          console.log( a.payload.doc.id);
+          /* console.log( a.payload.doc.id); */
           return data;
         })
       }),)

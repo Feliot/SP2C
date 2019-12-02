@@ -2,9 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
-//Firebase
-import { AngularFireAuthModule} from '@angular/fire/auth';
-import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PagesModule } from './pages/pages.module';
@@ -16,18 +13,17 @@ import { FilaComponent } from './componets/fila/fila.component';
 import { UtilmoduleModule } from './utils/utilmodule.module';
 import { FilterPipe } from './pipes/filter.pipe';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
-
+import { AngularFireModule } from '@angular/fire';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppComponent,
     NavBarComponent,
     routingComponents,
     FormDatosComponent,
     FilaComponent,
-    FilterPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -37,12 +33,12 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
     PagesModule,
     FormsModule,
      ReactiveFormsModule,
-     AngularFireAuthModule,
-     AngularFireStorageModule,
      UtilmoduleModule,
      NgxQRCodeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+ }

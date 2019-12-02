@@ -24,6 +24,9 @@ public password: string ;
   } */
   constructor(private miAuth: UserServiceService, private authRout: Router) {
   }
+  resolved(e){
+    console.log("Captcha resuelto", e);
+  }
 
   ngOnInit() {
     this.miAuth.getAuth()

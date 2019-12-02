@@ -16,6 +16,7 @@ export class QrcodeComponent implements AfterContentInit {
   constructor( public dialogRef: MatDialogRef<QrcodeComponent>, @Inject(MAT_DIALOG_DATA) public data: string) { }
 
   ngAfterContentInit() {
+    this.text_qr= "sadasdasdasdasd";
   }
 
 }

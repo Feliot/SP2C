@@ -29,5 +29,5 @@ children:[
 })
 export class AppRoutingModule { }
 export const routingComponents = [HomeComponent
-  , ErrorComponent,
+  ,ErrorComponent,
     LoginComponent, RegisterComponent, AltaComponent, GrillaComponent]
