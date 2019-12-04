@@ -10,7 +10,7 @@ export class FilterPipe implements PipeTransform {
   transform(value: any, arg: string): any {
   /*  console.log(arg, value); */
     if (arg == ''  ) return value;
-  const resultado=[];
+    const resultado=[];
    
   for(const valor of value){
     if(valor.tipo.toLowerCase().indexOf(arg.toLowerCase()) >-1){

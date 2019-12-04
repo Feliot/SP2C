@@ -1,11 +1,20 @@
+.contenido{
+    text-align: justify
+}
+
 table {
     width: 100%;
     padding: 5px;
     align-content: center;
     text-align: center;
+    align-self: center;
 /*     border-collapse: collapse; */
-background: whitesmoke;
+    background: whitesmoke;
     border-radius: 5px;
+    
+    list-style-position: outside;
+    
+    
 }
 td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
     padding: 2px;
@@ -42,4 +51,12 @@ th, td {
  .example-button-row button,
 .example-button-row a {
   margin-right: 8px;
+}
+
+/* thead , tbody{ display: unset; } */
+tbody {
+    height: auto;
+    width: auto;
+    overflow-y: scroll;
+    overflow-x: scroll;
 }

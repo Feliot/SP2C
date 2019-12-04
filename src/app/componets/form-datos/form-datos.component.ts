@@ -2,7 +2,9 @@ import { Output, ElementRef, ViewChild, AfterContentInit, OnInit} from '@angular
 import{ Usuario, miUsuario } from '../../models/usuario'
 import{ Concesionaria, miVehiculo } from '../../models/concesionaria'
 import { Component, Input} from '@angular/core';
-import * as jsPDF from 'jspdf';
+/* import * as jsPDF from 'jspdf'; */
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 import * as XLSX from 'xlsx';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { QrcodeComponent } from 'src/app/utils/mi-qrcode/qrcode/qrcode.component';
@@ -35,7 +37,7 @@ public Buscar="";
     //Si es un objeto
 /*     Object.keys(this.usuarios); */
     this.arrayUsuario = Object.keys(this.usuario);
-   
+    this.arrayUsuario.push("Acciones");
   }
   openDialog(e) {
     const dialogRef = this.dialog.open(QrcodeComponent);
@@ -54,18 +56,20 @@ public Buscar="";
       unit: 'pt',
       format: 'A4'
     });
-    doc.setFontSize(22);
+  /*   doc.setFontSize(22);
     doc.setFontStyle('cursiva');
-    doc.text('Listado de Concesionarias', 240, 30);
+    doc.text('Listado de Concesionarias', 240, 30); */
     let manejadorEspecial = {
       '#editor': function(element, renderer){
         return true;
       }
     }
-    let content = this.contenidoRef.nativeElement;
+  /*   doc.autoTable({html: '#Tabla', head: this.arrayUsuario}); */
+    doc.autoTable({html: "#Tabla", head:"#titulo"});
+   /*  let content = this.contenidoRef.nativeElement;
     doc.fromHTML(content.innerHTML, 30, 35, {
      'elementHandlers': manejadorEspecial
-    });
+    }); */
     doc.save('Concesionarias.pdf');
   }
   exportarCSV(){

@@ -14,6 +14,7 @@ import { UtilmoduleModule } from './utils/utilmodule.module';
 import { FilterPipe } from './pipes/filter.pipe';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { AngularFireModule } from '@angular/fire';
+import { ImagenPipePipe } from './pipes/imagen-pipe.pipe';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AngularFireModule } from '@angular/fire';
     routingComponents,
     FormDatosComponent,
     FilaComponent,
-    FilterPipe
+    FilterPipe,
+    ImagenPipePipe
   ],
   imports: [
     BrowserModule,

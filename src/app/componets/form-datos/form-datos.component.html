@@ -1,4 +1,4 @@
-<div #contenido >  
+<div #contenido>  
 <!-- <table mat-table [dataSource]="usuarios" class="mat-elevation-z8" >
     <ng-container [matColumnDef]="column" *ngFor="let column of arrayUsuario">
         <th mat-header-cell *matHeaderCellDef> {{ column | titlecase}} </th>
@@ -13,14 +13,15 @@
  <mat-form-field>
         <input matInput placeholder="Buscar por Tipo"  [(ngModel)]="Buscar" required name="Buscar" >
     </mat-form-field>
- <table>
-
-<thead id="titulo" > 
+ <table id="Tabla">
+<thead id="titulo"> 
     <td mat-header-cell *ngFor="let items of arrayUsuario"> {{ items | titlecase }} </td>
- </thead>
- <tbody *ngFor="let item of usuarios | filter:Buscar" app-fila [item]="item" (Cargar)="openDialog($event)">
-
+ </thead> 
+ <tbody id="cuerpo">
+    <tr  *ngFor="let item of usuarios | filter:Buscar" app-fila [item]="item" (Cargar)="openDialog($event)">
+    </tr>
 </tbody>
+
 </table>
 </div> <!-- //contenido -->
 <br>
